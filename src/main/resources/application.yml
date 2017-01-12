@@ -1,0 +1,43 @@
+server:
+    port: 8761
+    ssl:
+      enabled: false
+      key-store: classpath:keystore.jks
+      key-store-password: password
+      key-password: password
+
+eureka:
+  instance:
+#   hostname: localhost
+##   securePort: ${server.port}
+##   securePortEnabled: true
+##   nonSecurePortEnabled: false
+#   secureVirtualHostName: ${spring.application.name}
+#   homePageUrl: https://${eureka.instance.hostname}:${server.port}/
+#   statusPageUrl: https://${eureka.instance.hostname}:${server.port}/admin/info
+#
+#   metadataMap:
+#     hostname : ${eureka.instance.hostname}
+#     securePort: ${server.port}
+   hostname: localhost
+   securePort: ${server.port}
+   securePortEnabled: true
+   nonSecurePortEnabled: false
+   secureVirtualHostName: ${spring.application.name}
+   homePageUrl: http://${eureka.instance.hostname}:${server.port}/
+   statusPageUrlPath: http://localhost:8761/admin/info
+   metadataMap:
+     hostname : ${eureka.instance.hostname}
+     securePort: ${server.port}
+  client:
+    registerWithEureka: true
+    fetchRegistry: false
+    serviceUrl:
+      defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka/
+  server:
+#    waitTimeInMsWhenSyncEmpty: 0
+    enableSelfPreservation: true
+
+
+
+
