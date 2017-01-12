@@ -5,7 +5,7 @@ server:
       key-store: classpath:keystore.jks
       key-store-password: password
       key-password: password
-
+asdas
 eureka:
   instance:
 #   hostname: localhost
